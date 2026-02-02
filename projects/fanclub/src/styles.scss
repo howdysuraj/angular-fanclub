@@ -137,7 +137,7 @@
   /* Vision Section */
   --vision-section-bg: linear-gradient(to bottom, rgba(236, 72, 153, 0.06) 0%, rgba(168, 85, 247, 0.04) 100%);
   --vision-section-max-width: 64rem;
-  --vision-section-padding-y: 6rem;
+  --vision-section-padding-y: 3rem;
   --vision-section-padding-x: var(--space-16);
   --vision-title-color: var(--header-color-slate-900);
   --vision-title-size: 2.25rem;
@@ -190,7 +190,7 @@
   --vision-flow-arrow-color: #cbd5e1;
   --header-transition-scale-hover: 1.05;
 
-  /* Join Community Section */
+  /* Join Community Section - Light theme when site is in light mode */
   --join-section-max-width: 80rem;
   --join-section-padding-y: 6rem;
   --join-section-padding-x: var(--space-16);
@@ -201,31 +201,49 @@
   --join-grid-gap: var(--space-32);
   --join-card-radius: 1.5rem;
   --join-card-padding: var(--space-32);
-  /* Light mode: slightly softer dark section */
-  --join-bg: #0f172a;
-  --join-bg-gradient: linear-gradient(to bottom, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-  --join-border: var(--header-color-slate-700);
-  --join-title-color: var(--header-color-white);
-  --join-subtitle-color: var(--header-color-slate-400);
-  --join-card-bg: #1e293b;
-  --join-card-border: var(--header-color-slate-700);
+  --join-bg: #f8fafc;
+  --join-bg-gradient: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+  --join-border: #e2e8f0;
+  --join-title-color: var(--header-color-slate-900);
+  --join-subtitle-color: var(--header-color-slate-600);
+  --join-card-bg: #ffffff;
+  --join-card-border: #e2e8f0;
   --join-card-hover-lift: -0.25rem;
   --join-card-hover-border: rgba(236, 72, 153, 0.5);
   --join-icon-box-size: 3rem;
   --join-icon-box-radius: 0.75rem;
-  --join-icon-bg: rgba(236, 72, 153, 0.18);
+  --join-icon-bg: rgba(236, 72, 153, 0.12);
   --join-icon-text: var(--header-color-primary);
   --join-icon-border: rgba(236, 72, 153, 0.35);
-  --join-icon-shadow: 0 0 20px rgba(236, 72, 153, 0.25);
-  --join-qr-bg: #0d1425;
+  --join-icon-shadow: 0 0 20px rgba(236, 72, 153, 0.18);
+  --join-qr-bg: #f1f5f9;
   --join-qr-size: 10rem;
-  --join-qr-icon-opacity: 0.2;
-  --join-qr-icon-opacity-hover: 0.4;
-  --join-btn-bg: var(--header-color-slate-900);
-  --join-btn-border: var(--header-color-slate-800);
-  --join-btn-hover-bg: var(--header-color-slate-800);
+  --join-qr-icon-opacity: 0.25;
+  --join-qr-icon-opacity-hover: 0.45;
+  --join-btn-bg: #ffffff;
+  --join-btn-border: #e2e8f0;
+  --join-btn-hover-bg: #f1f5f9;
   --join-btn-text: var(--header-color-primary);
   --join-btn-glow: 0 0 12px rgba(236, 72, 153, 0.4);
+
+  /* Footer - Light theme when site is in light mode */
+  --footer-bg: #f1f5f9;
+  --footer-border: #e2e8f0;
+  --footer-max-width: 80rem;
+  --footer-padding-y: 3rem;
+  --footer-padding-x: var(--space-24);
+  --footer-padding-x-lg: var(--space-20);
+  --footer-title-color: var(--header-color-slate-900);
+  --footer-logo-color: var(--header-color-primary);
+  --footer-logo-bg: rgba(236, 72, 153, 0.15);
+  --footer-link-color: var(--header-color-slate-600);
+  --footer-link-hover-color: var(--header-color-slate-900);
+  --footer-copyright-color: var(--header-color-slate-600);
+  --footer-logo-box-size: 2rem;
+  --footer-logo-icon-size: 1.25rem;
+  --footer-title-size: 0.875rem;
+  --footer-link-size: 0.875rem;
+  --footer-logo-radius: 0.5rem;
 }
 
 .dark {
@@ -289,10 +307,29 @@
   --vision-check-icon-color: #34d399;
   --vision-flow-arrow-color: var(--header-color-slate-600);
 
-  /* Join Community - Dark Mode (deeper dark) */
+  /* Join Community - Dark Mode (section follows dark theme) */
   --join-bg: #0a0f1e;
   --join-bg-gradient: linear-gradient(to bottom, #0a0f1e 0%, #0d1425 50%, #0a0f1e 100%);
   --join-border: var(--header-color-slate-800);
+  --join-title-color: var(--header-color-white);
+  --join-subtitle-color: var(--header-color-slate-400);
   --join-card-bg: #141b2d;
   --join-card-border: var(--header-color-slate-800);
+  --join-icon-bg: rgba(236, 72, 153, 0.18);
+  --join-icon-shadow: 0 0 20px rgba(236, 72, 153, 0.25);
+  --join-qr-bg: #0d1425;
+  --join-qr-icon-opacity: 0.2;
+  --join-qr-icon-opacity-hover: 0.4;
+  --join-btn-bg: var(--header-color-slate-900);
+  --join-btn-border: var(--header-color-slate-800);
+  --join-btn-hover-bg: var(--header-color-slate-800);
+
+  /* Footer - Dark Mode */
+  --footer-bg: rgba(10, 15, 30, 0.5);
+  --footer-border: rgba(255, 255, 255, 0.06);
+  --footer-title-color: var(--header-color-white);
+  --footer-logo-bg: rgba(236, 72, 153, 0.2);
+  --footer-link-color: var(--header-color-slate-400);
+  --footer-link-hover-color: var(--header-color-white);
+  --footer-copyright-color: var(--header-color-slate-400);
 }
