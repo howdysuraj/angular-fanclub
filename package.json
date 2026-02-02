@@ -37,6 +37,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@netlify/angular-runtime": "^2.2.0",
     "@angular/build": "^21.1.2",
     "@angular/cli": "^21.1.2",
     "@angular/compiler-cli": "^21.1.0",
