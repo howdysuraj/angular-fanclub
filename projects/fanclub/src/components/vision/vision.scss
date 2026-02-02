@@ -1,0 +1,392 @@
+// ============================================
+// Vision Section
+// ============================================
+.vision {
+  position: relative;
+  max-width: var(--vision-section-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--vision-section-padding-y) var(--vision-section-padding-x);
+  box-sizing: border-box;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    background: var(--vision-section-bg);
+    z-index: -1;
+  }
+
+  @media (min-width: 640px) {
+    padding-left: var(--space-24);
+    padding-right: var(--space-24);
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: var(--space-32);
+    padding-right: var(--space-32);
+  }
+}
+
+// ============================================
+// Vision Intro
+// ============================================
+.vision-intro {
+  margin-bottom: var(--vision-intro-margin-bottom);
+  text-align: center;
+}
+
+.vision-title {
+  font-size: var(--vision-title-size);
+  font-weight: 800;
+  color: var(--vision-title-color);
+  margin: 0 0 var(--vision-title-margin-bottom);
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: var(--vision-title-size-md);
+  }
+}
+
+.vision-subtitle {
+  font-size: var(--vision-subtitle-size);
+  color: var(--vision-subtitle-color);
+  font-weight: 500;
+  max-width: var(--vision-subtitle-max-width);
+  margin: 0 auto;
+}
+
+// ============================================
+// Vision Blocks
+// ============================================
+.vision-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vision-blocks-gap);
+}
+
+.vision-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-12) var(--space-16);
+  align-items: start;
+  transition: transform var(--header-transition-duration) var(--header-transition-timing);
+
+  &:hover .vision-icon-box {
+    transform: scale(var(--header-transition-scale-hover));
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-48);
+  }
+}
+
+.vision-block-icon-wrap {
+  grid-column: 1;
+  grid-row: 1;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+.vision-icon-box {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid;
+  transition: transform var(--header-transition-duration) var(--header-transition-timing);
+
+  @media (min-width: 768px) {
+    width: var(--vision-icon-box-size);
+    height: var(--vision-icon-box-size);
+    border-radius: var(--vision-icon-box-radius);
+  }
+
+  &.vision-icon-box--blue {
+    background-color: var(--vision-accent-blue-bg);
+    color: var(--vision-accent-blue-text);
+    border-color: var(--vision-accent-blue-border);
+  }
+
+  &.vision-icon-box--emerald {
+    background-color: var(--vision-accent-emerald-bg);
+    color: var(--vision-accent-emerald-text);
+    border-color: var(--vision-accent-emerald-border);
+  }
+
+  &.vision-icon-box--purple {
+    background-color: var(--vision-accent-purple-bg);
+    color: var(--vision-accent-purple-text);
+    border-color: var(--vision-accent-purple-border);
+  }
+}
+
+.vision-icon {
+  font-size: 1.75rem;
+
+  @media (min-width: 768px) {
+    font-size: var(--vision-icon-size);
+  }
+}
+
+.vision-block-content {
+  display: contents;
+  flex-grow: 1;
+  min-width: 0;
+
+  @media (min-width: 768px) {
+    display: block;
+    padding-top: var(--space-8);
+  }
+}
+
+.vision-block-heading {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  font-size: var(--vision-block-heading-size);
+  font-weight: 800;
+  color: var(--vision-block-heading-color);
+  line-height: 1.2;
+  margin: 0 0 var(--space-24);
+
+  @media (min-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+    font-size: var(--vision-block-heading-size-md);
+  }
+}
+
+.vision-editorial {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding-left: var(--vision-editorial-padding-left);
+  border-left: var(--vision-editorial-border-width) solid var(--vision-editorial-border-color);
+
+  @media (min-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+// ============================================
+// Editorial Border & Body
+// ============================================
+.vision-editorial-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+
+  & > .vision-body + .vision-cards,
+  & > .vision-body + .vision-flow,
+  & > .vision-body + .vision-checklist {
+    margin-top: var(--space-8);
+  }
+
+  & > .vision-flow + .vision-checklist {
+    margin-top: var(--space-8);
+  }
+}
+
+.vision-body {
+  font-size: var(--vision-body-size);
+  color: var(--vision-body-color);
+  line-height: var(--vision-body-line-height);
+  margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: var(--vision-body-size-md);
+  }
+}
+
+// ============================================
+// Vision Cards (feature boxes)
+// ============================================
+.vision-cards {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.vision-cards--two {
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vision-card {
+  padding: var(--space-16);
+  background-color: var(--vision-card-bg);
+  border: 1px solid var(--vision-card-border);
+  border-radius: 0.75rem;
+}
+
+.vision-card-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+  font-size: 0.75rem;
+  font-weight: var(--header-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &.vision-card-label--blue {
+    color: var(--vision-card-label-color);
+  }
+}
+
+.vision-card-icon {
+  font-size: 0.875rem;
+}
+
+.vision-card-text {
+  font-size: var(--vision-card-text-size);
+  color: var(--vision-card-text-color);
+  margin: 0;
+}
+
+// ============================================
+// Flow Pills (LTS → Predictable Risk → Executive Peace)
+// ============================================
+.vision-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.vision-pill {
+  padding: var(--space-6) var(--space-12);
+  font-size: 0.75rem;
+  font-weight: var(--header-font-weight-bold);
+  border-radius: 0.25rem;
+  border: 1px solid;
+
+  &.vision-pill--emerald {
+    background-color: var(--vision-accent-emerald-pill-bg);
+    color: var(--vision-accent-emerald-pill-text);
+    border-color: var(--vision-accent-emerald-pill-border);
+  }
+
+  &.vision-pill--emerald-solid {
+    background-color: var(--vision-accent-emerald-solid-bg);
+    color: var(--header-color-white);
+    border-color: transparent;
+    box-shadow: 0 4px 6px -1px var(--vision-accent-emerald-solid-shadow), 0 2px 4px -2px var(--vision-accent-emerald-solid-shadow);
+  }
+}
+
+.vision-flow-arrow {
+  font-size: 1.25rem;
+  color: var(--vision-flow-arrow-color);
+}
+
+// ============================================
+// Checklist
+// ============================================
+.vision-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12) var(--space-32);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-8);
+    font-size: var(--vision-card-text-size);
+    color: var(--vision-card-text-color);
+  }
+}
+
+.vision-check-icon {
+  font-size: 1.125rem;
+  color: var(--vision-check-icon-color);
+  flex-shrink: 0;
+}
+
+// ============================================
+// Dark Feature Box (Recruitment Value / Retention)
+// ============================================
+.vision-dark-box {
+  background-color: var(--vision-dark-box-bg);
+  color: var(--vision-dark-box-text);
+  padding: var(--space-24);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--space-24);
+}
+
+.vision-dark-box-bg-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--space-16);
+  opacity: 0.1;
+  pointer-events: none;
+
+  .material-symbols-outlined {
+    font-size: 4.5rem;
+  }
+}
+
+.vision-dark-box-inner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.vision-dark-box-item {
+  &.vision-dark-box-item--border {
+    @media (min-width: 768px) {
+      border-left: 1px solid var(--vision-dark-box-divider);
+      padding-left: var(--space-24);
+    }
+  }
+}
+
+.vision-dark-box-label {
+  font-size: 0.75rem;
+  font-weight: var(--header-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--vision-dark-box-label);
+  margin: 0 0 var(--space-4);
+}
+
+.vision-dark-box-text {
+  font-size: var(--vision-card-text-size);
+  font-weight: 500;
+  line-height: 1.375;
+  margin: 0;
+}

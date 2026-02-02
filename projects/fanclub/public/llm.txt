@@ -1,0 +1,105 @@
+# Angular Fanclub
+
+> A Club for Thoughtful & Curious Minds. The platform for developers who demand stability, performance, and best-in-class tooling.
+
+## Overview
+
+Angular Fanclub is a single-page marketing/community site built with Angular 21. It promotes the Angular framework and offers WhatsApp-based community entry points for Talent, Developers, and CTOs/Tech Leads. The site uses standalone components, SCSS with CSS variables for theming (light/dark), and Material Symbols for icons. Styling is primarily custom SCSS; Tailwind is included but component styles avoid Tailwind in favor of semantic class names and shared variables.
+
+## Tech Stack
+
+- Angular 21 (standalone components, signals, SSR with client hydration)
+- Router (single route: default homepage)
+- SCSS for styles; global CSS variables in styles.scss for light/dark
+- Material Symbols Outlined (Google Fonts)
+- Tailwind CSS 4 (postcss) – minimal use; components use SCSS
+- Vitest for unit tests
+- Express for SSR server
+
+## Project Structure
+
+- Workspace root: angular-fanclub/
+- App project: projects/fanclub/
+  - Source: projects/fanclub/src/
+  - Public assets: projects/fanclub/public/ (favicon, images/logo/)
+  - Prefix for components: fanclub
+
+Key paths:
+- App shell: src/app/ (app.ts, app.html, app.routes.ts, app.config.ts)
+- Pages: src/pages/homepage/
+- Shared/section components: src/components/ (header, hero, vision, join-community)
+- Global styles & variables: src/styles.scss
+- Entry: src/main.ts, index.html
+
+## Routing
+
+- '' (default) -> Homepage (lazy-loaded)
+- No other routes defined.
+
+## Page Structure (Homepage)
+
+The homepage is the only route. It includes, in order:
+
+1. **Header** (fanclub-header) – global nav, fixed; part of app shell
+2. **Hero** (fanclub-hero) – badge, headline "Build Faster. Scale Smarter. Choose Angular.", description, CTA grid (For Companies, For CTOs, For Developers)
+3. **Vision** (fanclub-vision) – "Our Vision" section with three blocks: Empowering Community, Supporting Orgs and CTOs, Connecting Talent with Opportunities
+4. **Join Community** (fanclub-join-community) – id="community"; three cards: Talent Network, Developer Network, CTO & Tech Leads; each with icon, description, QR placeholder, and "Join Group" WhatsApp link
+
+## Components
+
+### fanclub-header (Header)
+- File: src/components/header/
+- Behavior: Scroll-hide (hides on scroll down, shows on scroll up). Dark mode toggle (class .dark on document.documentElement). Mobile menu state (toggle/resize/escape); mobile menu UI is commented out in template.
+- Nav links: Forum, Conferences, Tutorials (href="#"). Member Login button. Logo: Angular Fanclub (image + text).
+- Styles: Header SCSS uses CSS variables from styles.scss (sizes, colors, spacing). Responsive (e.g. logo size, nav height).
+
+### fanclub-hero (Hero)
+- File: src/components/hero/
+- Content: Badge "A Club for Thoughtful & Curious Minds", H1 with gradient "Choose Angular.", short description, three CTA buttons with icons (business, insights, code).
+- Styles: hero.scss; variables in styles.scss (--hero-*). Primary accent pink (#ec4899) for first CTA; others outlined. Responsive typography and spacing.
+
+### fanclub-vision (Vision)
+- File: src/components/vision/
+- Content: Section "Our Vision" with intro and three vision blocks (blue, emerald, purple). Each has icon box, heading, body text, and either cards, pills/checklist, or dark box. Uses Material Symbols (groups, corporate_fare, handshake, verified, trending_up, check_circle, etc.).
+- Styles: vision.scss; variables in styles.scss (--vision-*). Full-width gradient background; light/dark variants.
+
+### fanclub-join-community (Join Community)
+- File: src/components/join-community/
+- Content: Section "Join Our Community" with three cards (Talent Network, Developer Network, CTO & Tech Leads). Each: icon (person_add, terminal, leaderboard), title, description, QR placeholder (qr_code_2), "Join Group" link (wa.me placeholder URLs).
+- Styles: join-community.scss; variables in styles.scss (--join-*). Card/icon/QR/button use primary pink accent; icon shade and QR icons are pink-themed. Full-width background with borders.
+
+## Theming (CSS Variables)
+
+- Defined in src/styles.scss.
+- :root: spacing scale (--space-*), colors (--header-color-*, --hero-*, --vision-*, --join-*), primary pink --header-color-primary: #ec4899.
+- .dark class on <html>: dark mode overrides (backgrounds, text, borders, section-specific vars). Toggled by header theme button.
+- Sections: Header, Hero, Vision, Join Community each have their own --*-prefixed variables for layout, colors, and effects.
+
+## Assets
+
+- Favicon: favicon.ico (public)
+- Logos: public/images/logo/ (angular-fanclub.png, angular-fanclub-48.png, logo.png)
+- Fonts: Material Symbols Outlined loaded from Google Fonts in index.html
+
+## Build & Serve
+
+- ng serve – dev server (default project: fanclub when applicable)
+- ng build – production build; style budgets: anyComponentStyle 4kB warning / 8kB error
+- SSR: server entry projects/fanclub/src/server.ts; serve with node dist/fanclub/server/server.mjs (npm script: serve:ssr:fanclub)
+- Styles: tailwind.css + styles.scss (order in angular.json)
+
+## Conventions
+
+- Component selectors: fanclub-* (e.g. fanclub-header, fanclub-hero).
+- App root: app-root (selector in index.html).
+- Styling: Prefer semantic class names and SCSS; use global variables from styles.scss. Component SCSS files may be minimal (comment only) if styles were moved to styles.scss for budget (e.g. header, vision, join-community).
+- Lazy loading: Homepage is loadComponent in routes.
+
+## Contact / Links (placeholder)
+
+- Nav links (Forum, Conferences, Tutorials): href="#"
+- Join Group links: wa.me/group_invite_link_talent, wa.me/group_invite_link_dev, wa.me/group_invite_link_exec (placeholders)
+
+---
+
+This file describes the Angular Fanclub codebase and website structure for LLM and developer reference. Last updated from codebase review.

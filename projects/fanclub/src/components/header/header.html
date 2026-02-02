@@ -1,0 +1,105 @@
+<nav class="header-nav" [class.hide]="isHidden()">
+  <div class="header-container">
+    <div class="header-logo-section">
+      <div class="logo-wrapper">
+        <img
+          alt="Angular Fanclub Logo"
+          class="logo-image"
+          src="/images/logo/angular-fanclub-48.png"/>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">
+          Angular <span class="logo-sub">Fanclub</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <div class="header-nav-links">
+      <a class="nav-link" href="#">
+        <span class="material-symbols-outlined nav-icon">forum</span>
+        <span class="nav-text">Forum</span>
+      </a>
+      <a class="nav-link" href="#">
+        <span class="material-symbols-outlined nav-icon">event_seat</span>
+        <span class="nav-text">Conferences</span>
+      </a>
+      <a class="nav-link" href="#">
+        <span class="material-symbols-outlined nav-icon">school</span>
+        <span class="nav-text">Tutorials</span>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <button
+        class="theme-toggle"
+        (click)="toggleDarkMode()"
+        type="button"
+        aria-label="Toggle dark mode">
+        <span class="material-symbols-outlined theme-icon theme-icon-dark">dark_mode</span>
+        <span class="material-symbols-outlined theme-icon theme-icon-light">light_mode</span>
+      </button>
+
+      <!-- Desktop Login Button -->
+      <button class="login-button" type="button">
+        <span class="material-symbols-outlined login-icon">lock</span>
+        Member Login
+      </button>
+
+      <!-- Mobile Menu Toggle (Hamburger) -->
+      <button
+        class="mobile-menu-toggle"
+        (click)="toggleMobileMenu()"
+        type="button"
+        aria-label="Toggle mobile menu"
+        aria-expanded="isMobileMenuOpen()">
+        <span class="material-symbols-outlined mobile-menu-icon">
+          {{ isMobileMenuOpen() ? 'close' : 'menu' }}
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<!-- <div
+  class="mobile-menu-overlay"
+  [class.active]="isMobileMenuOpen()"
+  (click)="closeMobileMenu()">
+</div> -->
+
+<!-- Mobile Menu Panel -->
+<!-- <div class="mobile-menu-panel" [class.active]="isMobileMenuOpen()">
+  <div class="mobile-menu-header">
+    <h2 class="logo-main">Angular <span class="logo-sub">Fanclub</span></h2>
+    <button
+      class="mobile-menu-close"
+      (click)="closeMobileMenu()"
+      type="button"
+      aria-label="Close mobile menu">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <nav class="mobile-menu-links">
+    <a class="mobile-menu-link" href="#" (click)="closeMobileMenu()">
+      <span class="material-symbols-outlined mobile-menu-link-icon">forum</span>
+      <span>Forum</span>
+    </a>
+    <a class="mobile-menu-link" href="#" (click)="closeMobileMenu()">
+      <span class="material-symbols-outlined mobile-menu-link-icon">event_seat</span>
+      <span>Conferences</span>
+    </a>
+    <a class="mobile-menu-link" href="#" (click)="closeMobileMenu()">
+      <span class="material-symbols-outlined mobile-menu-link-icon">school</span>
+      <span>Tutorials</span>
+    </a>
+  </nav>
+
+  <div class="mobile-menu-login">
+    <button class="mobile-menu-login-button" type="button" (click)="closeMobileMenu()">
+      <span class="material-symbols-outlined login-icon">lock</span>
+      Member Login
+    </button>
+  </div>
+</div> -->
