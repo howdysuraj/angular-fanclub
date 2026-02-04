@@ -17,7 +17,7 @@
     width: 100vw;
     top: 0;
     bottom: 0;
-    background: var(--vision-section-bg);
+    //background: var(--vision-section-bg);
     z-index: -1;
   }
 
@@ -42,7 +42,7 @@
 
 .vision-title {
   font-size: var(--vision-title-size);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--vision-title-color);
   margin: 0 0 var(--vision-title-margin-bottom);
   line-height: 1.2;
@@ -55,9 +55,10 @@
 .vision-subtitle {
   font-size: var(--vision-subtitle-size);
   color: var(--vision-subtitle-color);
-  font-weight: 500;
+  font-weight: 300;
   max-width: var(--vision-subtitle-max-width);
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 // ============================================
@@ -159,7 +160,7 @@
   grid-row: 1;
   align-self: start;
   font-size: var(--vision-block-heading-size);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--vision-block-heading-color);
   line-height: 1.2;
   margin: 0 0 var(--space-24);
@@ -207,6 +208,7 @@
   color: var(--vision-body-color);
   line-height: var(--vision-body-line-height);
   margin: 0;
+  font-weight: 300;
 
   @media (min-width: 768px) {
     font-size: var(--vision-body-size-md);
