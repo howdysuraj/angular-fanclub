@@ -128,8 +128,13 @@
   border: none;
   cursor: pointer;
   transition: transform var(--header-transition-duration) var(--header-transition-timing),
-    background-color var(--header-transition-duration) var(--header-transition-timing);
+    background-color var(--header-transition-duration) var(--header-transition-timing),
+    box-shadow var(--header-transition-duration) var(--header-transition-timing);
   min-height: 2.75rem;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   &:active {
     transform: scale(0.95);
@@ -162,7 +167,7 @@
   box-shadow: var(--hero-cta-gradient-shadow);
 
   &:hover {
-    transform: scale(1.02);
+    box-shadow: var(--hero-cta-gradient-shadow), 0 6px 20px rgba(168, 85, 247, 0.35);
   }
 }
 
@@ -174,6 +179,7 @@
 
   &:hover {
     background-color: var(--hero-cta-outline-hover-bg);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -189,6 +195,7 @@
 
   &:hover {
     background-color: var(--hero-cta-dark-hover-bg);
+    box-shadow: var(--hero-cta-dark-shadow), 0 6px 20px rgba(0, 0, 0, 0.25);
   }
 }
 

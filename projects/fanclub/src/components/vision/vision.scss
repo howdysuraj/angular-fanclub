@@ -184,6 +184,46 @@
   }
 }
 
+.vision-cta {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-24);
+  padding: var(--space-12) var(--space-24);
+  font-size: 0.9375rem;
+  font-weight: var(--header-font-weight-bold);
+  color: var(--vision-cta-color, var(--header-color-primary));
+  background: var(--vision-cta-bg, transparent);
+  border: 1px solid var(--vision-cta-border, var(--header-color-primary));
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--header-transition-duration) var(--header-transition-timing),
+    background-color var(--header-transition-duration) var(--header-transition-timing),
+    border-color var(--header-transition-duration) var(--header-transition-timing),
+    box-shadow var(--header-transition-duration) var(--header-transition-timing);
+
+  &:hover {
+    background-color: var(--vision-cta-hover-bg, rgba(236, 72, 153, 0.08));
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(236, 72, 153, 0.15);
+  }
+
+  @media (min-width: 768px) {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: start;
+  }
+}
+
 // ============================================
 // Editorial Border & Body
 // ============================================

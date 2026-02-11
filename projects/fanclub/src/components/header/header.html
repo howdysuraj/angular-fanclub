@@ -2,10 +2,7 @@
   <div class="header-container">
     <div class="header-logo-section">
       <div class="logo-wrapper">
-        <img
-          alt="Angular Fanclub Logo"
-          class="logo-image"
-          src="/images/logo/angular-fanclub-48.png"/>
+        <img alt="Angular Fanclub Logo" class="logo-image" src="/images/logo/angular-fanclub-48.png" />
       </div>
       <div class="logo-text">
         <span class="logo-main">
@@ -31,27 +28,19 @@
     </div>
 
     <div class="header-actions">
-      <button
-        class="theme-toggle"
-        (click)="toggleDarkMode()"
-        type="button"
-        aria-label="Toggle dark mode">
+      <button class="theme-toggle" (click)="toggleDarkMode()" type="button" aria-label="Toggle dark mode">
         <span class="material-symbols-outlined theme-icon theme-icon-dark">dark_mode</span>
         <span class="material-symbols-outlined theme-icon theme-icon-light">light_mode</span>
       </button>
 
       <!-- Desktop Login Button -->
       <button class="login-button" type="button">
-        <span class="material-symbols-outlined login-icon">lock</span>
-        Member Login
+        <span class="material-symbols-outlined login-icon">heart_plus</span>
+        Join Fanclub
       </button>
 
       <!-- Mobile Menu Toggle (Hamburger) -->
-      <button
-        class="mobile-menu-toggle"
-        (click)="toggleMobileMenu()"
-        type="button"
-        aria-label="Toggle mobile menu"
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" type="button" aria-label="Toggle mobile menu"
         aria-expanded="isMobileMenuOpen()">
         <span class="material-symbols-outlined mobile-menu-icon">
           {{ isMobileMenuOpen() ? 'close' : 'menu' }}
